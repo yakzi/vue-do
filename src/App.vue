@@ -1,19 +1,21 @@
 <template>
 <div class="container">
   <Header title="VueDo - ToDo List made with Vue.JS"/>
+  <TodoAdder/>
   <TodoViewer @delete-todo="deleteTodo" :todos="todos" />
   </div>
 </template>
 
 <script>
 import Header from './components/Header'
-import TodoViewer from './components/TodoViewer.vue' 
-
+import TodoViewer from './components/TodoViewer' 
+import TodoAdder from './components/TodoAdder'
 export default {
   name: 'App',
   components: {
     Header,
-    TodoViewer
+    TodoViewer,
+    TodoAdder
   },
   data() {
     return {
