@@ -1,7 +1,6 @@
 <template>
     <header>
         <h1>{{ title }}</h1>
-        <Button text="Add Task" color="green"/>
     </header>
 </template>
 
@@ -27,5 +26,6 @@ header{
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+    text-align: center;
 }
 </style>
