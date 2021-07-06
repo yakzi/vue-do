@@ -1,14 +1,14 @@
 <template>
   <form @submit="onAdd" class="add-form">
     <div class="form-control">
-      <label>Todo task</label>
-      <input type="text" v-model="text" name="text" placeholder="Add Task" />
+      <b>Add new ToDo</b> <br>
+      <input type="text" id="inputT" v-model="text" name="text" placeholder="Enter todo name" />
     </div>
     <div class="form-control">
-      <input type="text" v-model="priority" name="text" placeholder="Enter priority"/>
+      <input type="text" id="inputT" v-model="priority" name="text" placeholder="Enter priority"/>
     </div>
     <div class="form-control">
-      <input type="submit" value="Save ToDo" class="btn btn-block" />
+      <input type="submit" id="inputB" value="Add" class="btn btn-block" />
     </div>
   </form>
 </template>
@@ -26,7 +26,7 @@ export default {
         onAdd(e) {
             e.preventDefault()
             if(!this.text) {
-                alert('Please add a task')
+                alert('Please add ToDo name')
                 return
             }
 
@@ -36,7 +36,7 @@ export default {
                 priority: this.priority
             }
 
-            console.log(newTodo)
+            this.$emit('add-todo', newTodo)
             this.text = ''
             this.priority = ''
         }
@@ -45,4 +45,17 @@ export default {
 </script>
 
 <style scoped>
+.add-form{
+  text-align: center;
+  border: 1px solid rgb(138, 138, 138);
+  margin: 10px;
+}
+.add-form #inputT{
+  margin: 10px;
+  text-align: center;
+}
+
+.add-form #inputB{
+  text-align: center;
+}
 </style>
