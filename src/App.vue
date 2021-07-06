@@ -1,6 +1,6 @@
 <template>
 <div class="container">
-  <Header/>
+  <Header title="VueDo - ToDo List made with Vue.JS"/>
   </div>
 </template>
 
