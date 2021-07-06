@@ -1,7 +1,7 @@
 <template>
 <div class="container">
   <Header title="VueDo - ToDo List made with Vue.JS"/>
-  <TodoAdder/>
+  <TodoAdder @add-todo="addTodo"/>
   <TodoViewer @delete-todo="deleteTodo" :todos="todos" />
   </div>
 </template>
@@ -24,40 +24,49 @@ export default {
   },
   methods: {
     deleteTodo(id) {
-      if(confirm('Are you sure?')){
       this.todos = this.todos.filter((todo) => todo.id !== id)
-    }
+    },
+    addTodo(todo){
+      this.todos = [...this.todos, todo]
     }
   },
   created() {
     this.todos = [
-      {
-        id: 1,
-        text: 'Buy new car',
-        priority: 'High'
-      },
-      {
-        id: 2,
-        text: 'Sell old phone',
-        priority: 'Medium'
-      },
-      {
-        id: 3,
-        text: 'Pick up new doors',
-        priority: 'High'
-      }
+      
     ]
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@200&display=swap');
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Encode Sans SC', sans-serif;
+}
+.container {
+  max-width: 500px;
+  margin: 20px auto;
+  min-height: 300px;
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 10px;
+}
+.btn {
+  background: rgb(221, 221, 221);
+  color: black;
+  border: 1px solid black;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  margin-bottom: 10px;
+  width: 50%;
+  box-shadow: 0 0 2px 2px greenyellow;
+}
+.btn:active {
+  transform: scale(0.98);
 }
 </style>
