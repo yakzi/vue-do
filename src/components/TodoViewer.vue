@@ -1,16 +1,21 @@
 <template> 
-<div v-for="todo in todos">
-    <h3> {{ todo.text }}</h3>
+<div :key="todo.id" v-for="todo in todos">
+    <Todo @delete-todo="$emit('delete-todo', todo.id)" :todo="todo"/>
 
 </div>
 
 </template>
 
 <script>
-    export default {
-        name: 'TodoViewer',
-        props: {
-            todos: Array
-        }
-    }
+import Todo from './Todo'
+export default {
+    name: 'TodoViewer',
+    props: {
+         todos: Array
+    },
+    components: {
+        Todo
+    },
+    emits: ['delete-todo'],
+}
 </script>

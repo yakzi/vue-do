@@ -1,6 +1,7 @@
 <template>
 <div class="todo">
-    <h3>{{ todo.text }}</h3>
+    <h3 @click="onDone(todo.id)">{{ todo.text }}</h3>
+    <i @click="onDelete(todo.id)" class="fas fa-times"></i>
     <p>{{ todo.priority }}</p>
 </div>
 
@@ -11,6 +12,14 @@ export default{
     name: 'Todo',
     props: {
         todo: Object
+    },
+    methods: {
+        onDelete(id) {
+            this.$emit('delete-todo', id)
+        },
+        onDone(id) {
+            
+        }
     }
 }
 </script>
@@ -24,7 +33,11 @@ export default{
 }
 
 .todo p{
-    color: lightcoral;
+    font-style: italic;
+}
+
+.fas {
+    color: red;
 }
 
 </style>
