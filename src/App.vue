@@ -1,7 +1,7 @@
 <template>
 <div class="container">
   <Header title="VueDo - ToDo List made with Vue.JS"/>
-  <TodoViewer :todos="todos" />
+  <TodoViewer @delete-todo="deleteTodo" :todos="todos" />
   </div>
 </template>
 
@@ -18,6 +18,13 @@ export default {
   data() {
     return {
       todos: []
+    }
+  },
+  methods: {
+    deleteTodo(id) {
+      if(confirm('Are you sure?')){
+      this.todos = this.todos.filter((todo) => todo.id !== id)
+    }
     }
   },
   created() {
