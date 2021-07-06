@@ -1,7 +1,7 @@
 <template>
 <div class="todo">
     <h3 @click="onDone(todo.id)">{{ todo.text }}</h3>
-    <i @click="onDelete(todo.id)" class="fas fa-times"></i>
+    <i @click="$emit('delete-todo', id)" class="fas fa-times"></i>
     <p>{{ todo.priority }}</p>
 </div>
 
@@ -13,14 +13,6 @@ export default{
     props: {
         todo: Object
     },
-    methods: {
-        onDelete(id) {
-            this.$emit('delete-todo', id)
-        },
-        onDone(id) {
-            
-        }
-    }
 }
 </script>
 
