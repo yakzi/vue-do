@@ -1,19 +1,35 @@
-# vue-do
+<h1 align="center">
+ <strong>VueDo</strong>
+ <br/><br/>
+</h1>
 
-## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Table of contents
+* [Introduction](#introduction)
+* [Features](#features)
+* [Screenshots](#screenshots)
+* [Technologies](#technologies)
+* [License](#license)
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Introduction
+VueDo is a very simple web application, which allows user to add and delete ToDo tasks.
+Created just for learning Vue.JS puropse. There is no database or even JSON,
+so todos will disappear after refresh.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Features
+* Add ToDo
+* Delete ToDo
+
+## Screenshots
+<p align="center">
+ <img src="./Screenshots/vueDo.png" alt="Screenshot from VueDo application"/> <br>
+</p>
+
+## Technologies
+* HTML, CSS
+* Vue.JS
+
+Application tested on Windows 10, Chrome 91.0.4472
+
+## License
+GNU General Public License v3.0
